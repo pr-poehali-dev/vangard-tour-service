@@ -585,7 +585,7 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно" },
-                  { icon: "MessageCircle", label: "WhatsApp / Telegram", value: "@vanguard_sochi", sub: "Ответ в течение 5 минут" },
+                  { icon: "MessageCircle", label: "Telegram", value: "@Max", sub: "Ответ в течение 5 минут" },
                   { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },
                 ].map((c, i) => (

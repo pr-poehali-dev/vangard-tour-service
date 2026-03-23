@@ -586,7 +586,7 @@ export default function Index() {
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 (862) 000-00-00", sub: "Круглосуточно" },
                   { icon: "MessageCircle", label: "WhatsApp / Telegram", value: "@vanguard_sochi", sub: "Ответ в течение 5 минут" },
-                  { icon: "Mail", label: "Email", value: "hello@vanguard-sochi.ru", sub: "Для деловых вопросов" },
+                  { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },
                 ].map((c, i) => (
                   <div key={i} className="flex items-start gap-4 p-5 glass-card rounded-xl">

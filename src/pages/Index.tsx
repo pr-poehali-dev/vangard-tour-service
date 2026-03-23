@@ -6,7 +6,7 @@ const TEAM_IMG = "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb
 
 const NAV_ITEMS = [
   { label: "Услуги", href: "#services" },
-  { label: "Флот", href: "#fleet" },
+  { label: "Автомобили", href: "#fleet" },
   { label: "Команда", href: "#team" },
   { label: "О нас", href: "#about" },
   { label: "Контакты", href: "#contacts" },
@@ -357,7 +357,7 @@ export default function Index() {
           <AnimSection>
             <div className="text-center mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4 font-sans">Автомобили</p>
-              <h2 className="font-display text-5xl md:text-6xl font-light">Наш флот</h2>
+              <h2 className="font-display text-5xl md:text-6xl font-light">Наши автомобили</h2>
             </div>
           </AnimSection>
           <AnimSection>

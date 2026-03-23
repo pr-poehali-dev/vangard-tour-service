@@ -97,11 +97,8 @@ export default function Index() {
       {/* ─── NAV ─── */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4" style={{ background: "linear-gradient(180deg,rgba(10,10,11,.95) 0%,transparent 100%)", backdropFilter: "blur(10px)" }}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center">
-              <span className="text-xs font-bold text-obsidian font-sans">VG</span>
-            </div>
-            <span className="font-display text-xl font-semibold tracking-widest text-gold">ВАН ГАРД</span>
+          <div className="flex items-center">
+            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/5a3b7139-7bf8-4dea-bb90-edf583c05e8b.svg" alt="Ван Гард" className="h-10 w-auto" />
           </div>
           <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map(item => (
@@ -626,14 +623,8 @@ export default function Index() {
       {/* ─── FOOTER ─── */}
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center">
-              <span className="text-xs font-bold text-obsidian font-sans">VG</span>
-            </div>
-            <div>
-              <div className="font-display text-lg tracking-widest text-gold">ВАН ГАРД</div>
-              <div className="font-sans text-xs text-white/20">Ваш лучший попутчик в Сочи</div>
-            </div>
+          <div className="flex items-center">
+            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/5a3b7139-7bf8-4dea-bb90-edf583c05e8b.svg" alt="Ван Гард" className="h-9 w-auto" />
           </div>
           <div className="flex flex-wrap gap-6 justify-center">
             {NAV_ITEMS.map(item => (

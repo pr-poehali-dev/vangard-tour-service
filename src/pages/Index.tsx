@@ -98,7 +98,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4" style={{ background: "linear-gradient(180deg,rgba(10,10,11,.95) 0%,transparent 100%)", backdropFilter: "blur(10px)" }}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/baedb029-5bf1-45ee-a655-2b6371b2adec.svg" alt="Ван Гард" className="h-10 w-auto" />
+            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/baedb029-5bf1-45ee-a655-2b6371b2adec.svg" alt="Ван Гард" className="h-52 w-auto" />
           </div>
           <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map(item => (

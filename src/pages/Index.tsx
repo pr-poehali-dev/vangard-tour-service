@@ -433,7 +433,7 @@ export default function Index() {
               {[
                 { icon: "Award", title: "Опытные гиды и инструкторы", desc: "Многолетний опыт и знания обеспечат Вам яркие эмоции при безусловной безопасности" },
                 { icon: "Heart", title: "Вежливость и забота", desc: "Индивидуальный подход к каждому гостю, внимание к деталям и особым пожеланиям" },
-                { icon: "Shield", title: "Безопасность прежде всего", desc: "Опыт вождения в горах, знание трасс и пешеходных маршрутов" },
+                { icon: "Shield", title: "Безопасность прежде всего", desc: "Все автомобили полноприводные и оснащены всеми системами безопасности, стаж вождения водителей более 20 лет" },
               ].map((f, i) => (
                 <div key={i} className="glass-card rounded-2xl p-6 flex gap-4">
                   <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0">

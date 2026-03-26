@@ -410,7 +410,7 @@ export default function Index() {
             <div className="text-center mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4 font-sans">Профессионалы</p>
               <h2 className="font-display text-5xl md:text-6xl font-light">Наша команда</h2>
-              <p className="font-sans text-white/35 mt-4 max-w-xl mx-auto text-sm">Опытные водители-гиды, которые знают Сочи и Кавказ как свои пять пальцев</p>
+              <p className="font-sans text-white/35 mt-4 max-w-xl mx-auto text-sm">Опытные профессионалы, которые знают и любят город Сочи</p>
             </div>
           </AnimSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

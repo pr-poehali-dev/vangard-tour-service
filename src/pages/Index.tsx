@@ -105,7 +105,9 @@ export default function Index() {
             {NAV_ITEMS.map(item => (
               <button key={item.href} onClick={() => scrollTo(item.href)} className="nav-link font-sans">{item.label}</button>
             ))}
-
+            <button onClick={() => scrollTo("#booking")} className="ml-4 px-5 py-2 text-xs font-bold tracking-widest uppercase font-sans text-obsidian gold-gradient rounded-full transition-all hover:shadow-lg hover:shadow-yellow-400/30">
+              Забронировать
+            </button>
           </div>
           <button className="lg:hidden text-gold" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon name={menuOpen ? "X" : "Menu"} size={24} />

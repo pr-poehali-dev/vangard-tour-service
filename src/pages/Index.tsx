@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "Автомобили", href: "#fleet" },
   { label: "Команда", href: "#team" },
   { label: "О нас", href: "#about" },
+  { label: "Галерея", href: "#gallery" },
   { label: "Контакты", href: "#contacts" },
   { label: "Инвесторам", href: "#investors" },
   { label: "Клуб", href: "#club" },

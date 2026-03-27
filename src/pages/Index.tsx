@@ -502,7 +502,7 @@ export default function Index() {
                 <span className="text-xs font-sans text-gold tracking-widest uppercase">Для инвесторов</span>
               </div>
               <h2 className="font-display text-5xl md:text-6xl font-light mb-6">
-                Инвестируйте<br/>в премиум-туризм Сочи
+                Инвестиции в<br/>премиум туризм
               </h2>
               <p className="font-sans text-white/45 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Сочи — одно из самых быстрорастущих туристических направлений России. Рынок премиум-трансферов и экскурсий показывает устойчивый рост. Ван Гард приглашает стратегических партнёров для масштабирования.

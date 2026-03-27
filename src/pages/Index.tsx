@@ -571,6 +571,48 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ─── GALLERY ─── */}
+      <section id="gallery" className="py-24 px-6" style={{ background: "linear-gradient(180deg,#0A0A0B 0%,#111114 100%)" }}>
+        <div className="max-w-7xl mx-auto">
+          <AnimSection>
+            <div className="text-center mb-16">
+              <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4 font-sans">Впечатления</p>
+              <h2 className="font-display text-5xl md:text-6xl font-light">Фотогалерея</h2>
+              <p className="font-sans text-white/35 mt-4 max-w-xl mx-auto text-sm">Автомобили, маршруты и моменты, которые делают каждую поездку особенной</p>
+            </div>
+          </AnimSection>
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
+            {[
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/4d5a9bae-cd0e-45a3-875c-c7910175389a.jpg", alt: "Mercedes V-Class на горной дороге Сочи", hint: "1200×1200 px, горный пейзаж с автомобилем" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/162ba581-1011-42f6-b7b3-a1e2914c7611.jpg", alt: "Салон Mercedes S-Class бизнес-класса", hint: "1200×1200 px, интерьер салона" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/29808f0e-6e55-40fc-8d84-77b633133ee9.jpg", alt: "Панорама Сочи и Чёрного моря", hint: "1200×1200 px, вид на город и море" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/3f58cede-db94-4ef9-9682-b0f962bb847f.jpg", alt: "Водитель открывает дверь VIP-автомобиля", hint: "1200×1200 px, профессиональный водитель" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/93ad1e9b-35b7-466d-8597-78019e44fb86.jpg", alt: "Mercedes E-Class у аэропорта Сочи ночью", hint: "1200×1200 px, ночная съёмка у аэропорта" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/28963c97-fdfb-4cb0-afef-c58feaf8e326.jpg", alt: "Роза Хутор, внедорожник на снежной дороге", hint: "1200×1200 px, зимний горный курорт" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/2ee81b2d-ac78-4837-9318-b391c5c7c905.jpg", alt: "Довольные пассажиры в салоне с видом на море", hint: "1200×1200 px, клиенты в поездке" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/52baff3a-7ae8-4f81-8b70-bbdc134f3660.jpg", alt: "Олимпийский парк Сочи ночью", hint: "1200×1200 px, ночная панорама Олимпийского парка" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/ba2f3f5a-7ae8-4f81-8b70-bbdc134f3660.jpg", alt: "Mercedes G-Class на серпантине над облаками", hint: "1200×1200 px, горный серпантин" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/c8af64be-0994-435d-a056-e602d4e8f7e2.jpg", alt: "Встреча VIP-клиентов в аэропорту Адлер", hint: "1200×1200 px, встреча в аэропорту" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/90dc9e9a-1e93-456b-a4d3-11324acb05d8.jpg", alt: "Mercedes вдоль черноморского побережья на закате", hint: "1200×1200 px, закат у моря" },
+              { src: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/files/47b9bec5-447c-4b1b-8320-a56ecea53d15.jpg", alt: "Парк премиум-автомобилей у отеля Сочи", hint: "1200×1200 px, флот автомобилей" },
+            ].map((photo, i) => (
+              <AnimSection key={i}>
+                <div className="break-inside-avoid group relative overflow-hidden rounded-2xl cursor-pointer" title={photo.hint}>
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="font-sans text-xs text-white/80">{photo.alt}</p>
+                  </div>
+                </div>
+              </AnimSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── CONTACTS ─── */}
       <section id="contacts" className="py-24 px-6" style={{ background: "#111114" }}>
         <div className="max-w-5xl mx-auto">

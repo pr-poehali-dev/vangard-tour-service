@@ -585,7 +585,7 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно" },
-                  { icon: "MessageCircle", label: "Telegram", value: "@Max", sub: "Ответ в течение 5 минут" },
+                  { icon: "MessageCircle", label: "Telegram", value: "@vanguardsochi", sub: "Ответ в течение 5 минут" },
                   { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },
                 ].map((c, i) => (
@@ -608,7 +608,7 @@ export default function Index() {
                 <div className="space-y-4">
                   <input placeholder="Ваше имя" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
                   <input placeholder="Телефон или email" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                  <textarea placeholder="Расскажите о вашем путешествии..." rows={4}
+                  <textarea placeholder="Ваше сообщение" rows={4}
                     className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all resize-none text-white" />
                   <button className="w-full py-4 gold-gradient text-obsidian font-sans font-bold tracking-widest uppercase text-sm rounded-xl hover:shadow-lg hover:shadow-yellow-400/20 transition-all">
                     Отправить сообщение

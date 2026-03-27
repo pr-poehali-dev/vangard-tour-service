@@ -585,11 +585,11 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно" },
-                  { icon: "MessageCircle", label: "Telegram", value: "@vanguardsochi", sub: "Ответ в течение 5 минут" },
+                  { icon: "MessageCircle", label: "Telegram", value: "@vanguardsochi", sub: "Ответ в течение 5 минут", href: "https://t.me/vanguardsochi" },
                   { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },
-                ].map((c, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 glass-card rounded-xl">
+                ].map((c: { icon: string; label: string; value: string; sub: string; href?: string }, i) => (
+                  <div key={i} className={`flex items-start gap-4 p-5 glass-card rounded-xl${c.href ? ' cursor-pointer hover:border-gold/40 transition-all' : ''}`} onClick={() => c.href && window.open(c.href, '_blank')}>
                     <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0">
                       <Icon name={c.icon} size={16} className="text-obsidian" />
                     </div>

@@ -96,9 +96,9 @@ export default function Index() {
     <div className="min-h-screen bg-obsidian text-[#EDE8DC] overflow-x-hidden">
 
       {/* ─── NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-0" style={{ background: "linear-gradient(180deg,rgba(10,10,11,.95) 0%,transparent 100%)", backdropFilter: "blur(10px)" }}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="hidden lg:flex items-center justify-between w-full">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6" style={{ background: "linear-gradient(180deg,rgba(10,10,11,.95) 0%,transparent 100%)", backdropFilter: "blur(10px)", minHeight: "96px" }}>
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-24">
+          <div className="hidden lg:flex items-center justify-center w-full gap-10">
             {NAV_ITEMS.map(item => (
               <button key={item.href} onClick={() => scrollTo(item.href)} className="nav-link font-sans">{item.label}</button>
             ))}

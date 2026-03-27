@@ -98,14 +98,11 @@ export default function Index() {
       {/* ─── NAV ─── */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-0" style={{ background: "linear-gradient(180deg,rgba(10,10,11,.95) 0%,transparent 100%)", backdropFilter: "blur(10px)" }}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/3dd70169-1b50-43e2-88ad-b6a334b670b1.svg" alt="Ван Гард" className="h-20 md:h-36 w-auto" />
-          </div>
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center justify-between w-full">
             {NAV_ITEMS.map(item => (
               <button key={item.href} onClick={() => scrollTo(item.href)} className="nav-link font-sans">{item.label}</button>
             ))}
-            <button onClick={() => scrollTo("#booking")} className="ml-4 px-5 py-2 text-xs font-bold tracking-widest uppercase font-sans text-obsidian gold-gradient rounded-full transition-all hover:shadow-lg hover:shadow-yellow-400/30">
+            <button onClick={() => scrollTo("#booking")} className="px-5 py-2 text-xs font-bold tracking-widest uppercase font-sans text-obsidian gold-gradient rounded-full transition-all hover:shadow-lg hover:shadow-yellow-400/30">
               Забронировать
             </button>
           </div>

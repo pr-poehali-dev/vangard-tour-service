@@ -100,7 +100,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto flex items-center justify-between h-24">
           <div className="hidden lg:flex items-center justify-center w-full gap-10 px-[5%]">
             {NAV_ITEMS.map(item => (
-              <button key={item.href} onClick={() => scrollTo(item.href)} className={`nav-link font-sans whitespace-nowrap${item.href === "#club" ? " text-[#00D4FF]" : ""}`}>{item.label}</button>
+              <button key={item.href} onClick={() => scrollTo(item.href)} className="nav-link font-sans whitespace-nowrap">{item.label}</button>
             ))}
             <button onClick={() => scrollTo("#booking")} className="px-5 py-2 text-xs font-bold tracking-widest uppercase font-sans text-obsidian gold-gradient rounded-full transition-all hover:shadow-lg hover:shadow-yellow-400/30">
               Забронировать

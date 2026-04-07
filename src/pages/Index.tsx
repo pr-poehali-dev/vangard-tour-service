@@ -248,7 +248,7 @@ export default function Index() {
                         <button key={s.title} onClick={() => setSelectedService(s.title)}
                           className={`p-4 rounded-xl text-left transition-all font-sans text-sm border ${selectedService === s.title ? "border-gold/60 bg-gold/10 text-gold" : "border-white/10 bg-white/2 text-white/55 hover:border-white/20"}`}>
                           <div className="flex items-center gap-3">
-                            <Icon name={s.icon} size={16} />
+                            <Icon name={s.icon} size={16} className="text-gold flex-shrink-0" />
                             <div>
                               <div className="font-medium">{s.title}</div>
                               <div className="text-xs opacity-60 mt-0.5">{s.price}</div>

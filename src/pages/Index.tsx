@@ -499,7 +499,7 @@ export default function Index() {
                 <Icon name="TrendingUp" size={16} className="text-gold" />
                 <span className="text-xs font-sans text-gold tracking-widest uppercase">Для инвесторов</span>
               </div>
-              <h2 className="font-display text-5xl md:text-6xl font-light mb-6 text-center">
+              <h2 className="font-display text-4xl md:text-6xl font-light mb-6 text-center px-2 md:px-0">
                 Инвестиции в премиальный туризм
               </h2>
               <p className="font-sans text-white/45 max-w-2xl mx-auto mb-10 leading-relaxed">

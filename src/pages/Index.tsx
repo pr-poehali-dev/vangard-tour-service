@@ -35,7 +35,7 @@ const TEAM_MEMBERS = [
   { name: "Дмитрий Рудак", role: "Founder, CEO", exp: "11 лет в сфере гостеприимства", langs: "35 лет стаж вождения", photo: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/96ad5ef4-3249-4d39-9adf-c2761b938dab.png" },
   { name: "Андрей Комиссаров", role: "Co-founder", exp: "9 лет в сфере гостеприимства", langs: "20 лет стаж вождения", photo: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/4b9eebe9-c68f-4c37-b751-5e6c8477354b.png" },
   { name: "Евгений Таранников", role: "Руководитель направления трансферов", exp: "8 лет в сфере гостеприимства", langs: "25 лет стаж вождения", photo: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/05b4a42e-7a7b-41bd-b6be-49964e5ee566.png" },
-  { name: "Ксения Зимон", role: "Руководитель направления размещения и экскурсий", exp: "10 лет в сфере гостеприимства", langs: "10 лет стаж вождения", photo: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/d67874e2-7b4e-49c2-979c-abb455dedba1.png" },
+  { name: "Ксения Зимон", role: "Руководитель направления размещения и экскурсий", exp: "10 лет в сфере гостеприимства", langs: "25 лет стаж вождения", photo: "https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/d67874e2-7b4e-49c2-979c-abb455dedba1.png" },
 ];
 
 const MONTHS = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];

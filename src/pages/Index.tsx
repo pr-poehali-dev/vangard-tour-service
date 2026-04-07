@@ -626,7 +626,7 @@ export default function Index() {
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно" },
                   { icon: "MessageCircle", label: "MAX", value: "Ван Гард Сочи", sub: "Ответ в течение 5 минут", href: "https://max.ru/join/A0F8J5og6qBz1Ni9q2y3MG-MwF-QG1eq5YQbJQ1Lu9w" },
-                  { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов" },
+                  { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов", href: "mailto:order.vanguard@mail.ru" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },
                 ].map((c: { icon: string; label: string; value: string; sub: string; href?: string }, i) => (
                   <div key={i} className={`flex items-start gap-4 p-5 glass-card rounded-xl${c.href ? ' cursor-pointer hover:border-gold/40 transition-all' : ''}`} onClick={() => c.href && window.open(c.href, '_blank')}>

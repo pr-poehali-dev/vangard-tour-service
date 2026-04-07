@@ -379,7 +379,7 @@ export default function Index() {
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { icon: "Users", label: "До 7 пассажиров" },
+                      { icon: "Users", label: "До 6 пассажиров" },
                       { icon: "Luggage", label: "Багаж и лыжи" },
                       { icon: "Wifi", label: "Wi-Fi на борту" },
                       { icon: "Snowflake", label: "Климат-контроль" },

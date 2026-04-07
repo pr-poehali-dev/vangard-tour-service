@@ -624,7 +624,7 @@ export default function Index() {
             <AnimSection>
               <div className="space-y-4">
                 {[
-                  { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно" },
+                  { icon: "Phone", label: "Телефон", value: "+7 999 651 33 73", sub: "Круглосуточно", href: "tel:+79996513373" },
                   { icon: "MessageCircle", label: "MAX", value: "Ван Гард Сочи", sub: "Ответ в течение 5 минут", href: "https://max.ru/join/A0F8J5og6qBz1Ni9q2y3MG-MwF-QG1eq5YQbJQ1Lu9w" },
                   { icon: "Mail", label: "Email", value: "order.vanguard@mail.ru", sub: "Для деловых вопросов", href: "mailto:order.vanguard@mail.ru" },
                   { icon: "MapPin", label: "Город", value: "Сочи, Россия", sub: "Встречаем в аэропорту Адлер" },

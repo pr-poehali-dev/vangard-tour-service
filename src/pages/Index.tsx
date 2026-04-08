@@ -365,10 +365,7 @@ export default function Index() {
                   <img src={HERO_IMG} alt="Mercedes V-Class" className="w-full h-full object-cover absolute inset-0" style={{ filter: "brightness(0.6)" }} />
                   <div className="absolute inset-0 flex items-end p-8">
                     <div>
-                      <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-4 py-2 mb-3">
-                        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-xs font-sans text-gold">5 автомобилей в парке</span>
-                      </div>
+
                       <h3 className="font-display text-4xl font-light text-white">Mercedes<br/>V-Class 4MATIC</h3>
                     </div>
                   </div>

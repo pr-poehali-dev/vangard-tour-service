@@ -71,6 +71,40 @@ export default function Index() {
   const [people, setPeople] = useState(2);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [contactName, setContactName] = useState("");
+  const [contactContact, setContactContact] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
+  const [contactSending, setContactSending] = useState(false);
+  const [contactDone, setContactDone] = useState(false);
+  const [contactError, setContactError] = useState("");
+
+  const handleContact = async () => {
+    if (!contactName.trim() || !contactContact.trim()) {
+      setContactError("Пожалуйста, заполните имя и контакт");
+      return;
+    }
+    setContactError("");
+    setContactSending(true);
+    try {
+      const res = await fetch("https://functions.poehali.dev/07c58caa-fa48-4f84-85be-cea48d5cb2ea", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: contactName, contact: contactContact, message: contactMessage }),
+      });
+      if (res.ok) {
+        setContactDone(true);
+        setContactName("");
+        setContactContact("");
+        setContactMessage("");
+      } else {
+        setContactError("Ошибка отправки. Попробуйте ещё раз.");
+      }
+    } catch {
+      setContactError("Ошибка отправки. Попробуйте ещё раз.");
+    } finally {
+      setContactSending(false);
+    }
+  };
 
   useEffect(() => { setTimeout(() => setHeroVisible(true), 100); }, []);
 
@@ -642,15 +676,46 @@ export default function Index() {
             <AnimSection>
               <div className="glass-card rounded-2xl p-8">
                 <h3 className="font-display text-2xl mb-6">Написать нам</h3>
-                <div className="space-y-4">
-                  <input placeholder="Ваше имя" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                  <input placeholder="Телефон или email" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                  <textarea placeholder="Ваше сообщение" rows={4}
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all resize-none text-white" />
-                  <button className="w-full py-4 gold-gradient text-obsidian font-sans font-bold tracking-widest uppercase text-sm rounded-xl hover:shadow-lg hover:shadow-yellow-400/20 transition-all">
-                    Отправить сообщение
-                  </button>
-                </div>
+                {contactDone ? (
+                  <div className="text-center py-8">
+                    <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4">
+                      <Icon name="Check" size={24} className="text-obsidian" />
+                    </div>
+                    <p className="font-display text-xl mb-2">Сообщение отправлено!</p>
+                    <p className="font-sans text-sm text-white/50">Мы свяжемся с вами в ближайшее время</p>
+                    <button onClick={() => setContactDone(false)} className="mt-6 font-sans text-xs text-gold/70 underline underline-offset-2">Отправить ещё</button>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <input
+                      placeholder="Ваше имя"
+                      value={contactName}
+                      onChange={e => setContactName(e.target.value)}
+                      className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white"
+                    />
+                    <input
+                      placeholder="Телефон или email"
+                      value={contactContact}
+                      onChange={e => setContactContact(e.target.value)}
+                      className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white"
+                    />
+                    <textarea
+                      placeholder="Ваше сообщение"
+                      rows={4}
+                      value={contactMessage}
+                      onChange={e => setContactMessage(e.target.value)}
+                      className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all resize-none text-white"
+                    />
+                    {contactError && <p className="font-sans text-xs text-red-400">{contactError}</p>}
+                    <button
+                      onClick={handleContact}
+                      disabled={contactSending}
+                      className="w-full py-4 gold-gradient text-obsidian font-sans font-bold tracking-widest uppercase text-sm rounded-xl hover:shadow-lg hover:shadow-yellow-400/20 transition-all disabled:opacity-60"
+                    >
+                      {contactSending ? "Отправляем..." : "Отправить сообщение"}
+                    </button>
+                  </div>
+                )}
               </div>
             </AnimSection>
           </div>

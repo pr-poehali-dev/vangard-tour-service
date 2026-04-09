@@ -95,7 +95,12 @@ export default function Index() {
       const res = await fetch("https://functions.poehali.dev/07c58caa-fa48-4f84-85be-cea48d5cb2ea", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: contactName, contact: contactContact, message: contactMessage }),
+        body: JSON.stringify({
+          name: contactName,
+          contact: contactContact,
+          message: contactMessage,
+          client_email: contactContact.includes('@') ? contactContact : '',
+        }),
       });
       if (res.ok) {
         setContactDone(true);
@@ -142,6 +147,7 @@ export default function Index() {
           name: bookingName,
           contact: bookingPhone + (bookingEmail ? ` / ${bookingEmail}` : ""),
           message: `Услуга: ${selectedService}\nДата: ${selectedDate}\nГостей: ${people}${bookingWishes ? `\nПожелания: ${bookingWishes}` : ""}`,
+          client_email: bookingEmail || '',
         }),
       });
       if (res.ok) {

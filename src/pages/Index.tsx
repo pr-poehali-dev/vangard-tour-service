@@ -70,6 +70,12 @@ export default function Index() {
   const [selectedYear] = useState(new Date().getFullYear());
   const [people, setPeople] = useState(2);
   const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [bookingName, setBookingName] = useState("");
+  const [bookingPhone, setBookingPhone] = useState("");
+  const [bookingEmail, setBookingEmail] = useState("");
+  const [bookingWishes, setBookingWishes] = useState("");
+  const [bookingSending, setBookingSending] = useState(false);
+  const [bookingError, setBookingError] = useState("");
   const [heroVisible, setHeroVisible] = useState(false);
   const [contactName, setContactName] = useState("");
   const [contactContact, setContactContact] = useState("");
@@ -120,10 +126,36 @@ export default function Index() {
     return d === 0 ? 7 : d;
   };
 
-  const handleBooking = () => {
+  const handleBooking = async () => {
     if (!selectedService || !selectedDate) return;
-    setBookingSuccess(true);
-    setTimeout(() => { setBookingSuccess(false); setBookingStep(1); setSelectedService(""); setSelectedDate(""); }, 4000);
+    if (!bookingName.trim() || !bookingPhone.trim()) {
+      setBookingError("Пожалуйста, заполните имя и телефон");
+      return;
+    }
+    setBookingError("");
+    setBookingSending(true);
+    try {
+      const res = await fetch("https://functions.poehali.dev/07c58caa-fa48-4f84-85be-cea48d5cb2ea", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: bookingName,
+          contact: bookingPhone + (bookingEmail ? ` / ${bookingEmail}` : ""),
+          message: `Услуга: ${selectedService}\nДата: ${selectedDate}\nГостей: ${people}${bookingWishes ? `\nПожелания: ${bookingWishes}` : ""}`,
+        }),
+      });
+      if (res.ok) {
+        setBookingSuccess(true);
+        setBookingName(""); setBookingPhone(""); setBookingEmail(""); setBookingWishes("");
+        setTimeout(() => { setBookingSuccess(false); setBookingStep(1); setSelectedService(""); setSelectedDate(""); }, 5000);
+      } else {
+        setBookingError("Ошибка отправки. Попробуйте ещё раз.");
+      }
+    } catch {
+      setBookingError("Ошибка отправки. Попробуйте ещё раз.");
+    } finally {
+      setBookingSending(false);
+    }
   };
 
   return (
@@ -363,16 +395,37 @@ export default function Index() {
                       <div className="flex justify-between text-sm font-sans"><span className="text-white/45">Гостей</span><span>{people}</span></div>
                     </div>
                     <div className="space-y-4 mb-6">
-                      <input placeholder="Ваше имя" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                      <input placeholder="+7 (___) ___-__-__" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                      <input placeholder="E-mail (необязательно)" className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white" />
-                      <textarea placeholder="Особые пожелания (багаж, дети, питомец...)" rows={3}
-                        className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all resize-none text-white" />
+                      <input
+                        placeholder="Ваше имя"
+                        value={bookingName}
+                        onChange={e => setBookingName(e.target.value)}
+                        className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white"
+                      />
+                      <input
+                        placeholder="+7 (___) ___-__-__"
+                        value={bookingPhone}
+                        onChange={e => setBookingPhone(e.target.value)}
+                        className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white"
+                      />
+                      <input
+                        placeholder="E-mail (необязательно)"
+                        value={bookingEmail}
+                        onChange={e => setBookingEmail(e.target.value)}
+                        className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all text-white"
+                      />
+                      <textarea
+                        placeholder="Особые пожелания (багаж, дети, питомец...)"
+                        rows={3}
+                        value={bookingWishes}
+                        onChange={e => setBookingWishes(e.target.value)}
+                        className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 font-sans text-sm placeholder-white/22 focus:outline-none focus:border-gold/60 transition-all resize-none text-white"
+                      />
+                      {bookingError && <p className="font-sans text-xs text-red-400">{bookingError}</p>}
                     </div>
                     <div className="flex gap-3">
                       <button onClick={() => setBookingStep(2)} className="flex-1 py-4 rounded-2xl font-sans border border-white/15 text-white/45 hover:border-white/30 transition-all text-sm">← Назад</button>
-                      <button onClick={handleBooking} className="flex-1 py-4 rounded-2xl font-sans font-bold tracking-widest uppercase text-sm gold-gradient text-obsidian hover:shadow-lg hover:shadow-yellow-400/20 transition-all">
-                        Отправить
+                      <button onClick={handleBooking} disabled={bookingSending} className="flex-1 py-4 rounded-2xl font-sans font-bold tracking-widest uppercase text-sm gold-gradient text-obsidian hover:shadow-lg hover:shadow-yellow-400/20 transition-all disabled:opacity-60">
+                        {bookingSending ? "Отправляем..." : "Отправить"}
                       </button>
                     </div>
                   </div>

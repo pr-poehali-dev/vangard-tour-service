@@ -784,9 +784,7 @@ export default function Index() {
       {/* ─── FOOTER ─── */}
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/caf2394d-110f-40c6-a52c-8e6cb8e9cddd/bucket/3dd70169-1b50-43e2-88ad-b6a334b670b1.svg" alt="Ван Гард" className="h-9 w-auto" />
-          </div>
+
           <div className="flex flex-wrap gap-6 justify-center">
             {NAV_ITEMS.map(item => (
               <button key={item.href} onClick={() => scrollTo(item.href)} className="nav-link font-sans text-xs">{item.label}</button>

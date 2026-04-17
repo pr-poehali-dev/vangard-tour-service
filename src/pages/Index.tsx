@@ -207,7 +207,7 @@ export default function Index() {
               <span className="block text-gradient-gold">Ван Гард</span>
             </h1>
             <p className="font-display text-2xl md:text-3xl text-white/80 mb-4 font-light italic">
-              Ваш лучший попутчик и компаньон
+              Ваш лучший попутчик и компаньон в Сочи
             </p>
             <p className="font-sans text-sm md:text-base text-white/45 mb-16 max-w-xl mx-auto leading-relaxed">
               Встретим, отвезём, сопроводим. Mersedes V-Class с достоинством, комфортом и безопастностью. Плюс эмоции.

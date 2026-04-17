@@ -210,7 +210,7 @@ export default function Index() {
               Ваш лучший попутчик и компаньон в Сочи
             </p>
             <p className="font-sans text-sm md:text-base text-white/45 mb-16 max-w-xl mx-auto leading-relaxed">
-              Встретим, отвезём, сопроводим. Mersedes V-Class с достоинством, комфортом и безопастностью. Плюс эмоции.
+              Встретим, отвезём, сопроводим. Mersedes V-Class с достоинством, комфортом и безопасностью. Плюс эмоции.
             </p>
           </div>
           <div className={`transition-all duration-1000 delay-500 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
